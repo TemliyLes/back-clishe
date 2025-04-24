@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "with_love_backgrounds",
+  "info": {
+    "singularName": "with-love-background",
+    "pluralName": "with-love-backgrounds",
+    "displayName": "With Love Background"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "background": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

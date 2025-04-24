@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "methodic_pages",
+  "info": {
+    "singularName": "methodic-page",
+    "pluralName": "methodic-pages",
+    "displayName": "Methodic Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "what": {
+      "type": "text"
+    },
+    "how": {
+      "type": "text"
+    },
+    "whom": {
+      "type": "text"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "pageCount": {
+      "type": "integer"
+    }
+  }
+}

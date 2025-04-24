@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "works_in_about_blocks",
+  "info": {
+    "singularName": "works-in-about-block",
+    "pluralName": "works-in-about-blocks",
+    "displayName": "Works in About Block"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "works": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

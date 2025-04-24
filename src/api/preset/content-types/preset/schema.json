@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "presets",
+  "info": {
+    "singularName": "preset",
+    "pluralName": "presets",
+    "displayName": "Preset",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "description": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "beforeAfterPhotos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.before-after"
+    }
+  }
+}
