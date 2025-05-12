@@ -34,6 +34,16 @@
     },
     "pageCount": {
       "type": "integer"
+    },
+    "shortBlockTitle": {
+      "type": "blocks"
+    },
+    "shortBlockDescription": {
+      "type": "blocks"
+    },
+    "secretCode": {
+      "type": "string",
+      "private": true
     }
   }
 }

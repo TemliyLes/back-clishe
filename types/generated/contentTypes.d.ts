@@ -369,6 +369,133 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiLearningInfoLearningInfo
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'learning_infos';
+  info: {
+    description: '';
+    displayName: 'LearningInfo';
+    pluralName: 'learning-infos';
+    singularName: 'learning-info';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Blocks;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::learning-info.learning-info'
+    > &
+      Schema.Attribute.Private;
+    number: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLearningLearning extends Struct.SingleTypeSchema {
+  collectionName: 'learnings';
+  info: {
+    description: '';
+    displayName: 'Learning';
+    pluralName: 'learnings';
+    singularName: 'learning';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    access: Schema.Attribute.String;
+    bg: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    cost: Schema.Attribute.Integer;
+    count_lections: Schema.Attribute.Integer;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    duration: Schema.Attribute.String;
+    format: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::learning.learning'
+    > &
+      Schema.Attribute.Private;
+    materials: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    secretCode: Schema.Attribute.String & Schema.Attribute.Private;
+    tags: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLectionLection extends Struct.CollectionTypeSchema {
+  collectionName: 'lections';
+  info: {
+    displayName: 'Lection';
+    pluralName: 'lections';
+    singularName: 'lection';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    answer: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::lection.lection'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    question: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLogLog extends Struct.CollectionTypeSchema {
+  collectionName: 'logs';
+  info: {
+    description: '';
+    displayName: 'Log';
+    pluralName: 'logs';
+    singularName: 'log';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ctx: Schema.Attribute.Text;
+    host: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::log.log'> &
+      Schema.Attribute.Private;
+    message: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiMethodicPageMethodicPage extends Struct.SingleTypeSchema {
   collectionName: 'methodic_pages';
   info: {
@@ -396,6 +523,9 @@ export interface ApiMethodicPageMethodicPage extends Struct.SingleTypeSchema {
     pageCount: Schema.Attribute.Integer;
     price: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
+    secretCode: Schema.Attribute.String & Schema.Attribute.Private;
+    shortBlockDescription: Schema.Attribute.Blocks;
+    shortBlockTitle: Schema.Attribute.Blocks;
     title: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -444,6 +574,10 @@ export interface ApiPresetCollectionPresetCollection
           localized: true;
         };
       }>;
+    detailPageImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    detailPageTitle: Schema.Attribute.String;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -457,6 +591,7 @@ export interface ApiPresetCollectionPresetCollection
       }>;
     presets: Schema.Attribute.Relation<'oneToMany', 'api::preset.preset'>;
     publishedAt: Schema.Attribute.DateTime;
+    secretCode: Schema.Attribute.String & Schema.Attribute.Private;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -533,6 +668,42 @@ export interface ApiQuestionAnswerQuestionAnswer
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSaleSale extends Struct.CollectionTypeSchema {
+  collectionName: 'sales';
+  info: {
+    description: '';
+    displayName: 'Sale';
+    pluralName: 'sales';
+    singularName: 'sale';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    confirmed: Schema.Attribute.Boolean;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::sale.sale'> &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    present: Schema.Attribute.Boolean;
+    preset_collections: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::preset-collection.preset-collection'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    token: Schema.Attribute.Integer;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    with_learning: Schema.Attribute.Boolean;
+    with_methodic: Schema.Attribute.Boolean;
   };
 }
 
@@ -1135,10 +1306,15 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::learning-info.learning-info': ApiLearningInfoLearningInfo;
+      'api::learning.learning': ApiLearningLearning;
+      'api::lection.lection': ApiLectionLection;
+      'api::log.log': ApiLogLog;
       'api::methodic-page.methodic-page': ApiMethodicPageMethodicPage;
       'api::preset-collection.preset-collection': ApiPresetCollectionPresetCollection;
       'api::preset.preset': ApiPresetPreset;
       'api::question-answer.question-answer': ApiQuestionAnswerQuestionAnswer;
+      'api::sale.sale': ApiSaleSale;
       'api::theme.theme': ApiThemeTheme;
       'api::with-love-background.with-love-background': ApiWithLoveBackgroundWithLoveBackground;
       'api::works-in-about-block.works-in-about-block': ApiWorksInAboutBlockWorksInAboutBlock;

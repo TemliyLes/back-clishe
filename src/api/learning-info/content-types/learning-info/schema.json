@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "learning_infos",
+  "info": {
+    "singularName": "learning-info",
+    "pluralName": "learning-infos",
+    "displayName": "LearningInfo",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "number": {
+      "type": "integer"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    }
+  }
+}

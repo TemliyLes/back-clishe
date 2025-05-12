@@ -4,7 +4,7 @@
   "private": true,
   "description": "A Strapi application",
   "scripts": {
-    "build": "strapi build",
+    "build": "cross-env NODE_ENV=production strapi build",
     "console": "strapi console",
     "deploy": "strapi deploy",
     "dev": "strapi develop",
@@ -33,5 +33,8 @@
   },
   "strapi": {
     "uuid": "0285e95e-5ec3-404e-ab94-7d026d7e6ae8"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }

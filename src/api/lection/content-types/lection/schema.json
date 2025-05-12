@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lections",
+  "info": {
+    "singularName": "lection",
+    "pluralName": "lections",
+    "displayName": "Lection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "question": {
+      "type": "string"
+    },
+    "answer": {
+      "type": "text"
+    }
+  }
+}

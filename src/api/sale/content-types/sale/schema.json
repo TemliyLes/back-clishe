@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sales",
+  "info": {
+    "singularName": "sale",
+    "pluralName": "sales",
+    "displayName": "Sale",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "preset_collections": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::preset-collection.preset-collection"
+    },
+    "with_methodic": {
+      "type": "boolean"
+    },
+    "confirmed": {
+      "type": "boolean"
+    },
+    "token": {
+      "type": "integer"
+    },
+    "present": {
+      "type": "boolean"
+    },
+    "with_learning": {
+      "type": "boolean"
+    }
+  }
+}

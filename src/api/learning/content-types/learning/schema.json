@@ -1,0 +1,54 @@
+{
+  "kind": "singleType",
+  "collectionName": "learnings",
+  "info": {
+    "singularName": "learning",
+    "pluralName": "learnings",
+    "displayName": "Learning",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "count_lections": {
+      "type": "integer"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "materials": {
+      "type": "string"
+    },
+    "format": {
+      "type": "string"
+    },
+    "access": {
+      "type": "string"
+    },
+    "cost": {
+      "type": "integer"
+    },
+    "bg": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "tags": {
+      "type": "string"
+    },
+    "secretCode": {
+      "type": "string",
+      "private": true
+    }
+  }
+}

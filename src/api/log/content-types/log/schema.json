@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "logs",
+  "info": {
+    "singularName": "log",
+    "pluralName": "logs",
+    "displayName": "Log",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "message": {
+      "type": "text"
+    },
+    "host": {
+      "type": "text"
+    },
+    "ctx": {
+      "type": "text"
+    }
+  }
+}
